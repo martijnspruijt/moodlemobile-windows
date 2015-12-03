@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup Label="ProjectConfigurations">
+        <ProjectConfiguration Include="Debug|AnyCPU">
+            <Configuration>Debug</Configuration>
+            <Platform>AnyCPU</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Debug|ARM">
+            <Configuration>Debug</Configuration>
+            <Platform>ARM</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Debug|x64">
+            <Configuration>Debug</Configuration>
+            <Platform>x64</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Debug|x86">
+            <Configuration>Debug</Configuration>
+            <Platform>x86</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|AnyCPU">
+            <Configuration>Release</Configuration>
+            <Platform>AnyCPU</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|ARM">
+            <Configuration>Release</Configuration>
+            <Platform>ARM</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|x64">
+            <Configuration>Release</Configuration>
+            <Platform>x64</Platform>
+        </ProjectConfiguration>
+        <ProjectConfiguration Include="Release|x86">
+            <Configuration>Release</Configuration>
+            <Platform>x86</Platform>
+        </ProjectConfiguration>
+    </ItemGroup>
+    <PropertyGroup Label="Globals">
+        <ProjectGuid>efffab2f-bfc5-4eda-b545-45ef4995f55a</ProjectGuid>
+    </PropertyGroup>
+    <PropertyGroup Label="Configuration">
+        <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0'">
+        <VisualStudioVersion>12.0</VisualStudioVersion>
+    </PropertyGroup>
+    <Import Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+    <PropertyGroup>
+        <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+        <TargetPlatformVersion>8.1</TargetPlatformVersion>
+        <DefaultLanguage>en-US</DefaultLanguage>
+        <PackageCertificateKeyFile>CordovaApp_StoreKey.pfx</PackageCertificateKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="CordovaApp_StoreKey.pfx" />
+        <Content Include="images\logo.scale-100.png" />
+        <Content Include="images\smalllogo.scale-100.png" />
+        <None Include="CordovaApp_TemporaryKey.pfx" />
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+    <Import Label="MultilingualAppToolkit" Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.PriResources.targets" />
+    <PropertyGroup>
+        <PreBuildEvent>
+Powershell -ExecutionPolicy RemoteSigned Unblock-File '$(ProjectDir)\cordova\lib\ApplyPlatformConfig.ps1'; Powershell -File '$(ProjectDir)\cordova\lib\ApplyPlatformConfig.ps1' '$(ProjectDir)\';
+    </PreBuildEvent>
+        <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+        <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+        <PackageCertificateThumbprint>4759553382DE4D51F0023DF8EB33CF55B32399D3</PackageCertificateThumbprint>
+    </PropertyGroup>
+    <PropertyGroup Label="MultilingualAppToolkit">
+        <MultilingualAppToolkitVersion>3.0</MultilingualAppToolkitVersion>
+        <MakePriLog>$(Temp)\$(MSBuildProjectName)_Multilingual.prilog.xml</MakePriLog>
+        <AppxGenerateProjectPriFileAdditionalMakepriExeParameters>/IndexLog "$(MakePriLog)"</AppxGenerateProjectPriFileAdditionalMakepriExeParameters>
+        <AppxBundle>Always</AppxBundle>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="images\splashscreen.scale-100.png" />
+        <Content Include="images\splashscreen.scale-140.png" />
+        <Content Include="images\splashscreen.scale-180.png" />
+        <Content Include="images\storelogo.scale-100.png" />
+        <None Include="Package.StoreAssociation.xml" />
+        <None Include="MultilingualResources\CordovaApp.zh-Hans.xlf" />
+        <None Include="MultilingualResources\CordovaApp.cs-CZ.xlf" />
+        <None Include="MultilingualResources\CordovaApp.nl-NL.xlf" />
+        <None Include="MultilingualResources\CordovaApp.es-ES.xlf" />
+        <None Include="MultilingualResources\CordovaApp.fr-FR.xlf" />
+        <None Include="MultilingualResources\CordovaApp.de-DE.xlf" />
+        <None Include="MultilingualResources\CordovaApp.hu-HU.xlf" />
+        <None Include="MultilingualResources\CordovaApp.it-IT.xlf" />
+        <None Include="MultilingualResources\CordovaApp.ja-JP.xlf" />
+        <None Include="MultilingualResources\CordovaApp.pt-BR.xlf" />
+        <None Include="MultilingualResources\CordovaApp.ru-RU.xlf" />
+        <Content Include="VERSION" />
+        <Content Include="www\about.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\config.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\config.xml">
+            <SubType>Designer</SubType>
+        </Content>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cordova.js">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\fonts\icomoon.eot" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\fonts\icomoon.svg" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\fonts\icomoon.ttf" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\fonts\icomoon.woff" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\layout.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\css\styles.css" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\emulator\core_calendar_get_calendar_events.json" />
+        <Content Include="www\emulator\core_course_get_contents.json" />
+        <Content Include="www\emulator\core_get_component_strings.json" />
+        <Content Include="www\emulator\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\emulator\local_mobile_core_files_get_files.json" />
+        <Content Include="www\emulator\local_mobile_core_grades_get_grades.json" />
+        <Content Include="www\emulator\local_mobile_core_message_get_contacts.json" />
+        <Content Include="www\emulator\local_mobile_core_message_get_messages.json" />
+        <Content Include="www\emulator\local_mobile_core_user_add_user_device.json" />
+        <Content Include="www\emulator\local_mobile_gradereport_user_get_grades_table.json" />
+        <Content Include="www\emulator\local_mobile_mod_forum_get_forums_by_courses.json" />
+        <Content Include="www\emulator\local_mobile_mod_forum_get_forum_discussions_paginated.json" />
+        <Content Include="www\emulator\local_mobile_mod_forum_get_forum_discussion_posts.json" />
+        <Content Include="www\emulator\moodle_enrol_get_users_courses.json" />
+        <Content Include="www\emulator\moodle_user_get_course_participants_by_id.json" />
+        <Content Include="www\emulator\moodle_user_get_users_by_courseid.json" />
+        <Content Include="www\emulator\moodle_webservice_get_siteinfo.json" />
+        <Content Include="www\emulator\userimage.png" />
+        <Content Include="www\externallib\backbone-localstorage.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\backbone-min.map">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
+        <Content Include="www\externallib\backbone.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\html2canvas.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\jquery-ui.custom.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\jquery.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\jquery.touchSwipe.min.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\matchMedia.addListener.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\matchMedia.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\md5.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\recorder.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\recorderWorker.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\require.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\text.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\externallib\underscore.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\icon.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\img\arrow-right2.png" />
+        <Content Include="www\img\arrowleft.png" />
+        <Content Include="www\img\arrowright.png" />
+        <Content Include="www\img\bg-orange.png" />
+        <Content Include="www\img\collapse.png" />
+        <Content Include="www\img\collapsegrey.png" />
+        <Content Include="www\img\delete.png" />
+        <Content Include="www\img\discussion.png" />
+        <Content Include="www\img\download.png" />
+        <Content Include="www\img\error.png" />
+        <Content Include="www\img\event-course.png" />
+        <Content Include="www\img\event-group.png" />
+        <Content Include="www\img\event-site.png" />
+        <Content Include="www\img\event-user.png" />
+        <Content Include="www\img\expand.png" />
+        <Content Include="www\img\expandgrey.png" />
+        <Content Include="www\img\files\archive-64.png" />
+        <Content Include="www\img\files\audio-64.png" />
+        <Content Include="www\img\files\avi-64.png" />
+        <Content Include="www\img\files\base-64.png" />
+        <Content Include="www\img\files\bmp-64.png" />
+        <Content Include="www\img\files\calc-64.png" />
+        <Content Include="www\img\files\chart-64.png" />
+        <Content Include="www\img\files\database-64.png" />
+        <Content Include="www\img\files\document-64.png" />
+        <Content Include="www\img\files\draw-64.png" />
+        <Content Include="www\img\files\eps-64.png" />
+        <Content Include="www\img\files\flash-64.png" />
+        <Content Include="www\img\files\folder-64.png" />
+        <Content Include="www\img\files\folder-open-64.png" />
+        <Content Include="www\img\files\gif-64.png" />
+        <Content Include="www\img\files\html-64.png" />
+        <Content Include="www\img\files\image-64.png" />
+        <Content Include="www\img\files\impress-64.png" />
+        <Content Include="www\img\files\isf-64.png" />
+        <Content Include="www\img\files\jpeg-64.png" />
+        <Content Include="www\img\files\markup-64.png" />
+        <Content Include="www\img\files\math-64.png" />
+        <Content Include="www\img\files\moodle-64.png" />
+        <Content Include="www\img\files\mp3-64.png" />
+        <Content Include="www\img\files\mpeg-64.png" />
+        <Content Include="www\img\files\oth-64.png" />
+        <Content Include="www\img\files\pdf-64.png" />
+        <Content Include="www\img\files\png-64.png" />
+        <Content Include="www\img\files\powerpoint-64.png" />
+        <Content Include="www\img\files\psd-64.png" />
+        <Content Include="www\img\files\quicktime-64.png" />
+        <Content Include="www\img\files\sourcecode-64.png" />
+        <Content Include="www\img\files\spreadsheet-64.png" />
+        <Content Include="www\img\files\text-64.png" />
+        <Content Include="www\img\files\tiff-64.png" />
+        <Content Include="www\img\files\unknown-64.png" />
+        <Content Include="www\img\files\video-64.png" />
+        <Content Include="www\img\files\wav-64.png" />
+        <Content Include="www\img\files\wmv-64.png" />
+        <Content Include="www\img\files\writer-64.png" />
+        <Content Include="www\img\folder.png" />
+        <Content Include="www\img\grades\agg_mean.png" />
+        <Content Include="www\img\grades\agg_sum.png" />
+        <Content Include="www\img\grades\manual_item.png" />
+        <Content Include="www\img\grades\outcomes.png" />
+        <Content Include="www\img\header-bg.png" />
+        <Content Include="www\img\header-content.png" />
+        <Content Include="www\img\header-participants.png" />
+        <Content Include="www\img\ico-arrowdown.png" />
+        <Content Include="www\img\ico-arrowright.png" />
+        <Content Include="www\img\ico-back.png" />
+        <Content Include="www\img\ico-contacts.png" />
+        <Content Include="www\img\ico-course.png" />
+        <Content Include="www\img\ico-help.png" />
+        <Content Include="www\img\ico-mail.png" />
+        <Content Include="www\img\ico-menu.png" />
+        <Content Include="www\img\ico-movie.png" />
+        <Content Include="www\img\ico-network.png" />
+        <Content Include="www\img\ico-news.png" />
+        <Content Include="www\img\ico-pencil.png" />
+        <Content Include="www\img\ico-picture.png" />
+        <Content Include="www\img\ico-presentation.png" />
+        <Content Include="www\img\ico-settings.png" />
+        <Content Include="www\img\ico-userarrowdown.png" />
+        <Content Include="www\img\ico-userarrowright.png" />
+        <Content Include="www\img\icon\.pgbomit" />
+        <Content Include="www\img\icon\android\.DS_Store" />
+        <Content Include="www\img\icon\android\icon-36-ldpi.png" />
+        <Content Include="www\img\icon\android\icon-48-mdpi.png" />
+        <Content Include="www\img\icon\android\icon-72-hdpi.png" />
+        <Content Include="www\img\icon\android\icon-96-xhdpi.png" />
+        <Content Include="www\img\icon\icon.icns" />
+        <Content Include="www\img\icon\ios\icon-120.png" />
+        <Content Include="www\img\icon\ios\icon-152.png" />
+        <Content Include="www\img\icon\ios\icon-57-2x.png" />
+        <Content Include="www\img\icon\ios\icon-57.png" />
+        <Content Include="www\img\icon\ios\icon-72-2x.png" />
+        <Content Include="www\img\icon\ios\icon-72.png" />
+        <Content Include="www\img\icon\ios\icon-76.png" />
+        <Content Include="www\img\icon\w8\icon-150.png" />
+        <Content Include="www\img\icon\w8\icon-30.png" />
+        <Content Include="www\img\icon\w8\icon-50.png" />
+        <Content Include="www\img\icon\wp8\icon-173.png" />
+        <Content Include="www\img\icon\wp8\icon-62.png" />
+        <Content Include="www\img\info.png" />
+        <Content Include="www\img\list-rightarrow.png" />
+        <Content Include="www\img\loading.gif" />
+        <Content Include="www\img\loadingblack.gif" />
+        <Content Include="www\img\loadingwhite.gif" />
+        <Content Include="www\img\login-logo.png" />
+        <Content Include="www\img\logo-cva.png" />
+        <Content Include="www\img\logout.png" />
+        <Content Include="www\img\message.png" />
+        <Content Include="www\img\mod\assign.png" />
+        <Content Include="www\img\mod\assignment.png" />
+        <Content Include="www\img\mod\book.png" />
+        <Content Include="www\img\mod\chat.png" />
+        <Content Include="www\img\mod\choice.png" />
+        <Content Include="www\img\mod\data.png" />
+        <Content Include="www\img\mod\database.png" />
+        <Content Include="www\img\mod\date.png" />
+        <Content Include="www\img\mod\external-tool.png" />
+        <Content Include="www\img\mod\feedback.png" />
+        <Content Include="www\img\mod\file.png" />
+        <Content Include="www\img\mod\folder.png" />
+        <Content Include="www\img\mod\forum.png" />
+        <Content Include="www\img\mod\glossary.png" />
+        <Content Include="www\img\mod\ims.png" />
+        <Content Include="www\img\mod\imscp.png" />
+        <Content Include="www\img\mod\label.png" />
+        <Content Include="www\img\mod\lesson.png" />
+        <Content Include="www\img\mod\lti.png" />
+        <Content Include="www\img\mod\page.png" />
+        <Content Include="www\img\mod\quiz.png" />
+        <Content Include="www\img\mod\resource.png" />
+        <Content Include="www\img\mod\scorm.png" />
+        <Content Include="www\img\mod\survey.png" />
+        <Content Include="www\img\mod\url.png" />
+        <Content Include="www\img\mod\wiki.png" />
+        <Content Include="www\img\mod\workshop.png" />
+        <Content Include="www\img\received.png" />
+        <Content Include="www\img\reload.png" />
+        <Content Include="www\img\reloadblack.png" />
+        <Content Include="www\img\reloadgrey.png" />
+        <Content Include="www\img\sent.png" />
+        <Content Include="www\img\splash\.pgbomit" />
+        <Content Include="www\img\splash\android\android_hdpi_portrait.png" />
+        <Content Include="www\img\splash\android\android_ldpi_portrait.png" />
+        <Content Include="www\img\splash\android\android_mdpi_portrait.png" />
+        <Content Include="www\img\splash\android\android_xhdpi_portrait.png" />
+        <Content Include="www\img\splash\ios\ipad_landscape.png" />
+        <Content Include="www\img\splash\ios\ipad_portrait.png" />
+        <Content Include="www\img\splash\ios\ipad_retina_landscape.png" />
+        <Content Include="www\img\splash\ios\ipad_retina_portrait.png" />
+        <Content Include="www\img\splash\ios\iphone5.png" />
+        <Content Include="www\img\splash\ios\iphone_portrait.png" />
+        <Content Include="www\img\splash\ios\iphone_retina_portrait.png" />
+        <Content Include="www\img\time.png" />
+        <Content Include="www\img\userimage.png" />
+        <Content Include="www\img\website.png" />
+        <Content Include="www\index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lang\ar.json" />
+        <Content Include="www\lang\bg.json" />
+        <Content Include="www\lang\ca.json" />
+        <Content Include="www\lang\cs.json" />
+        <Content Include="www\lang\de.json" />
+        <Content Include="www\lang\en.json" />
+        <Content Include="www\lang\es.json" />
+        <Content Include="www\lang\es_mx.json" />
+        <Content Include="www\lang\eu.json" />
+        <Content Include="www\lang\fa.json" />
+        <Content Include="www\lang\fr.json" />
+        <Content Include="www\lang\he.json" />
+        <Content Include="www\lang\hu.json" />
+        <Content Include="www\lang\it.json" />
+        <Content Include="www\lang\ja.json" />
+        <Content Include="www\lang\nl.json" />
+        <Content Include="www\lang\pt_br.json" />
+        <Content Include="www\lang\ru.json" />
+        <Content Include="www\lang\sv.json" />
+        <Content Include="www\lang\tr.json" />
+        <Content Include="www\lang\zh_cn.json" />
+        <Content Include="www\lang\zh_tw.json" />
+        <Content Include="www\less\layout.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\less\styles.less" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\app.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.cache.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.db.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.emulator.js" />
+        <Content Include="www\lib\mm.fs.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.lang.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.panels.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.rdebugger.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.settings.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.sync.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.tpl.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.util.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.widgets.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\mm.windows8.js" />
+        <Content Include="www\lib\scroll.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\lib\worker.js" />
+        <Content Include="www\package.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\plugins\addcontact\main.js" />
+        <Content Include="www\plugins\addnote\main.js" />
+        <Content Include="www\plugins\com.phonegap.plugins.PushPlugin\src\windows8\PushPluginProxy.js" />
+        <Content Include="www\plugins\com.phonegap.plugins.PushPlugin\www\PushNotification.js" />
+        <Content Include="www\plugins\contents\contents.html" />
+        <Content Include="www\plugins\contents\folder.html" />
+        <Content Include="www\plugins\contents\main.js" />
+        <Content Include="www\plugins\contents\mimetypes.json" />
+        <Content Include="www\plugins\contents\sections.html" />
+        <Content Include="www\plugins\events\event.html" />
+        <Content Include="www\plugins\events\events.html" />
+        <Content Include="www\plugins\events\icon.png" />
+        <Content Include="www\plugins\events\main.js" />
+        <Content Include="www\plugins\forum\attachments.html" />
+        <Content Include="www\plugins\forum\discussion.html" />
+        <Content Include="www\plugins\forum\discussions.html" />
+        <Content Include="www\plugins\forum\main.js" />
+        <Content Include="www\plugins\forum\view.html" />
+        <Content Include="www\plugins\forum\worker.js" />
+        <Content Include="www\plugins\grades\activities.html" />
+        <Content Include="www\plugins\grades\activities_total.html" />
+        <Content Include="www\plugins\grades\grades_table.html" />
+        <Content Include="www\plugins\grades\main.js" />
+        <Content Include="www\plugins\label\main.js" />
+        <Content Include="www\plugins\label\view.html" />
+        <Content Include="www\plugins\messages\bubbles.html" />
+        <Content Include="www\plugins\messages\contact.html" />
+        <Content Include="www\plugins\messages\contacts.html" />
+        <Content Include="www\plugins\messages\conversation.html" />
+        <Content Include="www\plugins\messages\icon.png" />
+        <Content Include="www\plugins\messages\main.js" />
+        <Content Include="www\plugins\messages\messages.html" />
+        <Content Include="www\plugins\messages\recent.html" />
+        <Content Include="www\plugins\messages\search.html" />
+        <Content Include="www\plugins\myfiles\files.html" />
+        <Content Include="www\plugins\myfiles\icon.png" />
+        <Content Include="www\plugins\myfiles\main.js" />
+        <Content Include="www\plugins\notifications\icon.png" />
+        <Content Include="www\plugins\notifications\main.js" />
+        <Content Include="www\plugins\notifications\notification.html" />
+        <Content Include="www\plugins\notifications\notifications.html" />
+        <Content Include="www\plugins\notifications\notifications_enable.html" />
+        <Content Include="www\plugins\notifications\notifications_full.html" />
+        <Content Include="www\plugins\notifications\notification_alert.html" />
+        <Content Include="www\plugins\org.apache.cordova.camera\src\windows\CameraProxy.js" />
+        <Content Include="www\plugins\org.apache.cordova.camera\www\Camera.js" />
+        <Content Include="www\plugins\org.apache.cordova.camera\www\CameraConstants.js" />
+        <Content Include="www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js" />
+        <Content Include="www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js" />
+        <Content Include="www\plugins\org.apache.cordova.console\www\console-via-logger.js" />
+        <Content Include="www\plugins\org.apache.cordova.console\www\logger.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\src\windows8\ContactProxy.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\www\Contact.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\www\ContactAddress.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\www\ContactError.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\www\ContactField.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\www\ContactFieldType.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\www\ContactFindOptions.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\www\ContactName.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\www\ContactOrganization.js" />
+        <Content Include="www\plugins\org.apache.cordova.contacts\www\contacts.js" />
+        <Content Include="www\plugins\org.apache.cordova.device\src\windows8\DeviceProxy.js" />
+        <Content Include="www\plugins\org.apache.cordova.device\www\device.js" />
+        <Content Include="www\plugins\org.apache.cordova.file-transfer\src\windows\FileTransferProxy.js" />
+        <Content Include="www\plugins\org.apache.cordova.file-transfer\www\FileTransfer.js" />
+        <Content Include="www\plugins\org.apache.cordova.file-transfer\www\FileTransferError.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\src\windows8\FileProxy.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\DirectoryEntry.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\DirectoryReader.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\Entry.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\File.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\FileEntry.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\FileError.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\FileReader.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\FileSystem.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\fileSystems.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\FileUploadOptions.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\FileUploadResult.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\FileWriter.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\Flags.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\LocalFileSystem.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\Metadata.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\ProgressEvent.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\requestFileSystem.js" />
+        <Content Include="www\plugins\org.apache.cordova.file\www\resolveLocalFileSystemURI.js" />
+        <Content Include="www\plugins\org.apache.cordova.globalization\www\globalization.js" />
+        <Content Include="www\plugins\org.apache.cordova.globalization\www\GlobalizationError.js" />
+        <Content Include="www\plugins\org.apache.cordova.inappbrowser\www\inappbrowser.js" />
+        <Content Include="www\plugins\org.apache.cordova.inappbrowser\www\windows8\InAppBrowserProxy.js" />
+        <Content Include="www\plugins\org.apache.cordova.media-capture\src\windows8\CaptureProxy.js" />
+        <Content Include="www\plugins\org.apache.cordova.media-capture\src\windows8\MediaFile.js" />
+        <Content Include="www\plugins\org.apache.cordova.media-capture\www\capture.js" />
+        <Content Include="www\plugins\org.apache.cordova.media-capture\www\CaptureAudioOptions.js" />
+        <Content Include="www\plugins\org.apache.cordova.media-capture\www\CaptureError.js" />
+        <Content Include="www\plugins\org.apache.cordova.media-capture\www\CaptureImageOptions.js" />
+        <Content Include="www\plugins\org.apache.cordova.media-capture\www\CaptureVideoOptions.js" />
+        <Content Include="www\plugins\org.apache.cordova.media-capture\www\MediaFile.js" />
+        <Content Include="www\plugins\org.apache.cordova.media-capture\www\MediaFileData.js" />
+        <Content Include="www\plugins\org.apache.cordova.media\src\windows8\MediaProxy.js" />
+        <Content Include="www\plugins\org.apache.cordova.media\www\Media.js" />
+        <Content Include="www\plugins\org.apache.cordova.media\www\MediaError.js" />
+        <Content Include="www\plugins\org.apache.cordova.network-information\src\windows8\NetworkInfoProxy.js" />
+        <Content Include="www\plugins\org.apache.cordova.network-information\www\Connection.js" />
+        <Content Include="www\plugins\org.apache.cordova.network-information\www\network.js" />
+        <Content Include="www\plugins\org.apache.cordova.splashscreen\www\splashscreen.js" />
+        <Content Include="www\plugins\org.apache.cordova.splashscreen\www\windows8\SplashScreenProxy.js" />
+        <Content Include="www\plugins\page\dialog.html" />
+        <Content Include="www\plugins\page\main.js" />
+        <Content Include="www\plugins\page\view.html" />
+        <Content Include="www\plugins\participants\countries.json" />
+        <Content Include="www\plugins\participants\main.js" />
+        <Content Include="www\plugins\participants\participant.html" />
+        <Content Include="www\plugins\participants\participants.html" />
+        <Content Include="www\plugins\participants\participants_row.html" />
+        <Content Include="www\plugins\resource\dialog.html" />
+        <Content Include="www\plugins\resource\main.js" />
+        <Content Include="www\plugins\resource\viewmultiple.html" />
+        <Content Include="www\plugins\resource\viewsingle.html" />
+        <Content Include="www\plugins\sendmessage\main.js" />
+        <Content Include="www\plugins\upload\icon.png" />
+        <Content Include="www\plugins\upload\main.js" />
+        <Content Include="www\plugins\url\main.js" />
+        <Content Include="www\plugins\url\view.html" />
+        <Content Include="www\README.md" />
+        <Content Include="www\reset.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <AppxManifest Include="package.appxmanifest">
+            <SubType>Designer</SubType>
+        </AppxManifest>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\cordova_plugins.js">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+    <ItemGroup>
+        <PRIResource Include="strings\cs-CZ\resources.resjson" />
+        <PRIResource Include="strings\de-DE\resources.resjson" />
+        <PRIResource Include="strings\en-US\resources.resjson" />
+        <PRIResource Include="strings\es-ES\resources.resjson" />
+        <PRIResource Include="strings\fr-FR\resources.resjson" />
+        <PRIResource Include="strings\hu-HU\resources.resjson" />
+        <PRIResource Include="strings\it-IT\resources.resjson" />
+        <PRIResource Include="strings\ja-JP\resources.resjson" />
+        <PRIResource Include="strings\nl-NL\resources.resjson" />
+        <PRIResource Include="strings\pt-BR\resources.resjson" />
+        <PRIResource Include="strings\ru-RU\resources.resjson" />
+        <PRIResource Include="strings\zh-Hans\resources.resjson" />
+    </ItemGroup>
+</Project>

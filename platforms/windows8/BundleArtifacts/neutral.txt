@@ -1,0 +1,14 @@
+MainPackage=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_AnyCPU.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-cs.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-de.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-es.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-fr.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-hu.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-it.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-ja.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-nl.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-pt.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-ru.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_language-zh-hans.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_scale-140.appx
+ResourcePack=C:\Users\Dani\Development\MM\platforms\windows8\bin\Release\CordovaApp_1.10.0.22_Bundle\CordovaApp_1.10.0.22_scale-180.appx

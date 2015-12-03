@@ -1,0 +1,91 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "package.appxmanifest": {
+                "parents": {
+                    "/Package/Capabilities": [
+                        {
+                            "xml": "<Capability Name=\"picturesLibrary\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<DeviceCapability Name=\"webcam\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<Capability Name=\"musicLibrary\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<DeviceCapability Name=\"microphone\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "net.tunts.webintent": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.chromium.zip": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "nl.x-services.plugins.launchmyapp": {
+            "URL_SCHEME": "saviadigital",
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "com.phonegap.plugin.statusbar": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.contacts": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.file-transfer": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.globalization": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.media-capture": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.splashscreen": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.media": {
+            "PACKAGE_NAME": "MoodleMobile"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "MoodleMobile"
+        }
+    },
+    "dependent_plugins": {
+        "org.apache.cordova.file": {
+            "PACKAGE_NAME": "MoodleMobile"
+        }
+    }
+}

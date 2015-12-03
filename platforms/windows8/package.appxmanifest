@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+    <Identity Name="com.mm.moodlemobile" Publisher="CN=33CDCDF6-1EB5-4827-9897-ED25C91A32F6" Version="0.0.1.0" />
+    <Properties>
+        <DisplayName>MoodleMobile</DisplayName>
+        <PublisherDisplayName>Apache Cordova Team</PublisherDisplayName>
+        <Logo>images\storelogo.png</Logo>
+    </Properties>
+    <Prerequisites>
+        <OSMinVersion>6.2.1</OSMinVersion>
+        <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+    </Prerequisites>
+    <Resources>
+        <Resource Language="x-generate" />
+    </Resources>
+    <Applications>
+        <Application Id="com.mm.moodlemobile" StartPage="www/index.html">
+            <m2:VisualElements BackgroundColor="#FB9E27" Description="CordovaApp" DisplayName="MoodleMobile" ForegroundText="light" Square150x150Logo="images\logo.png" Square30x30Logo="images\smalllogo.png" ToastCapable="true">
+                <m2:DefaultTile>
+                    <m2:ShowNameOnTiles>
+                        <m2:ShowOn Tile="square150x150Logo" />
+                    </m2:ShowNameOnTiles>
+                </m2:DefaultTile>
+                <m2:SplashScreen BackgroundColor="#FB9E27" Image="images\splashscreen.png" />
+                <m2:InitialRotationPreference>
+                    <m2:Rotation Preference="landscape" />
+                    <m2:Rotation Preference="landscapeFlipped" />
+                </m2:InitialRotationPreference>
+            </m2:VisualElements>
+        </Application>
+    </Applications>
+    <Capabilities>
+        <Capability Name="internetClient" />
+        <Capability Name="picturesLibrary" />
+        <Capability Name="musicLibrary" />
+        <Capability Name="videosLibrary" />
+        <DeviceCapability Name="webcam" />
+        <DeviceCapability Name="microphone" />
+    </Capabilities>
+</Package>
